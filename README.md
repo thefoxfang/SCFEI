@@ -10,6 +10,7 @@
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
 - [Documentation](#documentation)
+- [File Description](#file-description)
 - [Demo](#demo)
 - [Results](#results)
 - [License](./LICENSE)
@@ -72,6 +73,26 @@ Here is the procedure to install the main code under `/Fortran` directory. The i
 `srun delta.x -i delta.inp > delta.out`
 
 # Documentation
-The format of all the input files, including the `delta.inp` for running the delta.x code, is available under `/Doc` didirectory
+The format of all input files—including the `delta.inp` file used to run `delta.x`—can be found in the `/Doc` directory.
+
+# File Description
+
+## Input files
+To run `delta.x`, you need the following outputs from prior GW–BSE calculations using the BerkeleyGW package:
+
+1. **`eqp.dat`**: contains the quasiparticle energies (band energies) produced by BerkeleyGW’s `sigma.x` code.  
+2. **`kernel.h5`**: contains the electron–hole interaction kernel produced by BerkeleyGW’s `kernel.x` code.  
+3. **`eigenvectors.h5`**: contains the exciton envelope functions produced by BerkeleyGW’s `absorption.x` code.
+
+Please note Filenames **must** be exactly `eqp.dat`, `kernel.h5`, and `eigenvectors.h5`, and the `eqp.dat` file **must** include all k-points present in `kernel.h5` (i.e., do not fold k-points using symmetry).  
+
+## Output files
+After executing `delta.x` (for example, with `srun delta.x -i delta.inp > delta.out`), the following output files are produced:
+1. **convergence.dat**: records the SCF convergence behavior at each iteration.
+2. **kpt.dat**: lists all k-points used in the calculation. 
+3. **qmat.dat**: contains the Bogoliubov transformation matrix from the final SCF step. 
+4. **gapmat.dat**: contains the order parameter (gap matrix) from the final SCF step.  
+5. **eig.dat**: lists the single-particle excitation energies of the EI phase from the last SCF iteration.  
+6. **delmat.h5**: consolidates all of the above data into a single `HDF5` file. 
 
 # Demo
