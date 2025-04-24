@@ -1,123 +1,51 @@
 # Self-Consistent Field method for Excitonic Insulators (SCFEI)
 
-Contents
-Overview
-Repo Contents
-System Requirements
-Installation Guide
-Demo
-Results
-License
-Issues
-Citation
+[![arXiv shield](https://img.shields.io/badge/arXiv-2503.11563-blue.svg?style=flat)](https://arxiv.org/abs/2503.11563)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15277150.svg)](https://10.5281/zenodo.15277150)
+
+## Contents
+
+- [Overview](#overview)
+- [Repo Contents](#repo-contents)
+- [System Requirements](#system-requirements)
+- [Installation Guide](#installation-guide)
+- [Demo](#demo)
+- [Results](#results)
+- [License](./LICENSE)
+- [Issues](https://github.com/ebridge2/lol/issues)
+- [Citation](#citation)
 
 # Overview
 
-In 1967, Nobel laureate W. Kohn and colleagues introduced the concept of the excitonic insulator (EI), a correlated many-body state arising from the condensation of electron-hole pairs, analogous to Cooper pair
-condensation in a superconductor. To explore the properties of the EI phase theoretically, we have, based on our best knowledge, firstly developed the ab initio formalism which is able to calcualte the electron-hole order parameter as well as the single-particle properties of the EI phase in the Bardeen–Cooper–Schrieffer (BCS) regime. Our formalism based on:
-(1) the GW method to account for the band energy;
-(2) GW plus Bethe-Salpeter equation (GW-BSE) approach for the electron-hole interactions;
-(3) Self-consistent field (SCF) method for solving the so-called gap equations.
+In 1967, Nobel laureate W. Kohn and colleagues introduced the concept of the [excitonic insulator](https://journals.aps.org/pr/abstract/10.1103/PhysRev.158.462) (EI), a correlated many-body state arising from the condensation of electron-hole pairs, analogous to Cooper pair condensation in a superconductor. To explore the properties of the EI phase theoretically, we have, to the best of our knowledge, firstly developed an ab initio formalism capable of calculating both the electron–hole order parameter and the single-particle properties of the EI phase in the Bardeen–Cooper–Schrieffer (BCS) regime. Our formalism is based on:
 
-In this project, we provide the code for the step 3, whereas the `BerkeleyGW` code for the step 1 & 2 is publicly available at https://berkeleygw.org/.
+(1) the [*GW* method](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.34.5390) to account for the band energy;  
+(2) [*GW* plus Bethe-Salpeter equation](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.62.4927) (*GW*-BSE) approach for the electron-hole interactions;  
+(3) [Self-consistent field](https://arxiv.org/abs/2503.11563) (SCF) method for solving the so-called gap equations.  
 
-theoryon the mean-field self-consistent method
+This project focuses on step 3, while the [`BerkeleyGW`](https://berkeleygw.org/) code for steps 1 and 2 is publicly available and free to download.
 
-Supervised learning techniques designed for the situation when the dimensionality exceeds the sample size have a tendency to overfit as the dimensionality of the data increases. To remedy this high dimensionality; low sample size (HDLSS) situation, we attempt to learn a lower-dimensional representation of the data before learning a classifier. That is, we project the data to a situation where the dimensionality is more manageable, and then we are able to better apply standard classification or clustering techniques since we will have fewer dimensions to overfit. A number of previous works have focused on how to strategically reduce dimensionality in the unsupervised case, yet in the supervised HDLSS regime, few works have attempted to devise dimensionality reduction techniques that leverage the labels associated with the data. In this package, we provide several methods for feature extraction, some utilizing labels and some not, along with easily extensible utilities to simplify cross-validative efforts to identify the best feature extraction method. Additionally, we include a series of adaptable benchmark simulations to serve as a standard for future investigative efforts into supervised HDLSS. Finally, we produce a comprehensive comparison of the included algorithms across a range of benchmark simulations and real data applications.
+# Repo Contents
+- [Fortran](./Fortran): `Fortran` package main code for performing SCFEI calculations.
+- [Tools](./Tools): `Fortran` package code for analysing the order parameter.
+- [Docs](./Docs): package documentation, which contains input files descriptions.
+- [Demo](./Demo): a demenstration of the code by calculating the EI phase of monolayer 1T'-MoS<sub>2</sub> 
 
-Repo Contents
-R: R package code.
-docs: package documentation, and usage of the lolR package on many real and simulated data examples.
-man: package manual for help in R session.
-tests: R unit tests written using the testthat package.
-vignettes: R vignettes for R session html help pages.
-System Requirements
-Hardware Requirements
-The lol package requires only a standard computer with enough RAM to support the operations defined by a user. For minimal performance, this will be a computer with about 2 GB of RAM. For optimal performance, we recommend a computer with the following specs:
+# System Requirements
 
-RAM: 16+ GB
-CPU: 4+ cores, 3.3+ GHz/core
+## Hardware Requirements
 
-The runtimes below are generated using a computer with the recommended specs (16 GB RAM, 4 cores@3.3 GHz) and internet of speed 25 Mbps.
+### *GW*-BSE calculations
+Please consult the [`BerkeleyGW`](https://berkeleygw.org/) documentation for the recommended hardware to run *GW* and *GW*-BSE calculations.  
+> &emsp;&#8226; **Warning**: Our package’s input files depend on (1) band energies and (2) the electron–hole interaction kernel from <u>well-converged</u> *GW* and *GW*-BSE runs. If those calculations are not converged, the results will be <u>physically incorrect and non-interpretable</u>.
 
-Software Requirements
-OS Requirements
-The package development version is tested on Linux operating systems. The developmental version of the package has been tested on the following systems:
+### SCFEI calculations
+SCFEI calculations cannot be performed on a standard workstation. They require a high-performance cluster with:
+> &emsp;&#8226; **Sufficient memory** to store the full electron–hole kernel matrix elements  
+> &emsp;&#8226; **High CPU throughput** for the self-consistent calculations
 
-Linux: Ubuntu 16.04
-Mac OSX:
-Windows:
+For an full electron–hole kernel *K*<sub>v'c'k'vck</sub> (v: valence band index; c: conduction band index; k: k-point index) with 2 valence bands, 2 conduction bands, and ~ 8,000 k-points (size ~ 250 GB), we recommend:  
+> &emsp;&#8226; **CPU**: 8 × AMD EPYC 7763 processors (512 total cores)  
+> &emsp;&#8226; **RAM**: 2,048 GB
 
-The CRAN package should be compatible with Windows, Mac, and Linux operating systems.
-
-Before setting up the lolR package, users should have R version 3.4.0 or higher, and several packages set up from CRAN.
-
-Installing R version 3.4.2 on Ubuntu 16.04
-the latest version of R can be installed by adding the latest repository to apt:
-
-sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list
-gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
-gpg -a --export E084DAB9 | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install r-base r-base-dev
-which should install in about 20 seconds.
-
-Installation Guide
-Stable Release
-lolR is available in a stable release on CRAN:
-
-install.packages('lolR')
-Development Version
-Package dependencies
-Users should install the following packages prior to installing lolR, from an R terminal:
-
-install.packages(c('ggplot2', 'abind', 'irlba', 'knitr', 'rmarkdown', 'latex2exp', 'MASS', 'randomForest'))
-which will install in about 30 seconds on a machine with the recommended specs.
-
-The lolR package functions with all packages in their latest versions as they appear on CRAN on December 13, 2017. Users can check CRAN snapshot for details. The versions of software are, specifically:
-
-abind_1.4-5
-latex2exp_0.4.0
-ggplot2_2.2.1
-irlba_2.3.1
-Matrix_1.2-3
-MASS_7.3-47
-randomForest_4.6-12
-If you are having an issue that you believe to be tied to software versioning issues, please drop us an Issue.
-
-Package Installation
-From an R session, type:
-
-require(devtools)
-install_github('neurodata/lol', build_vignettes=TRUE, force=TRUE)  # install lol with the vignettes
-require(lolR)
-vignette("lol", package="lolR")  # view one of the basic vignettes
-The package should take approximately 40 seconds to install with vignettes on a recommended computer.
-
-Demo
-Functions
-For interactive demos of the functions, please check out the vignettes built into the package. They can be accessed as follows:
-
-require(lolR)
-vignette('lol')
-vignette('pca')
-vignette('cpca')
-vignette('lrcca')
-vignette('mdp')
-vignette('xval')
-vignette('qoq')
-vignette('simulations')
-vignette('nearestCentroid')
-Extending the lolR Package
-The lolR package makes many useful resources available (such as embedding and cross-validation) for simple extension.
-
-To extend the lolR package, check out the vignettes:
-
-require(lolR)
-vignette('extend_embedding')
-vignette('extend_classification')
-Results
-In this benchmark comparison, we show that LOL does better than all linear embedding techniques in supervised HDLSS settings when dimensionality is high (d > 100, ntrain <= d) on 20 benchmark problems from the UCI and PMLB datasets. LOL provides a good tradeoff between maintaining the class conditional difference (good misclassification rate) in a small number of dimensions (low number of embedding dimensions).
-
-Citation
-For usage of the package and associated manuscript, please cite according to the enclosed citation.bib.
+Please ensure you have access to resources of comparable scale before attempting SCFEI calculations.
