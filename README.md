@@ -1,3 +1,5 @@
+# Self-Consistent Field method for Excitonic Insulators (SCFEI)
+
 Contents
 Overview
 Repo Contents
@@ -8,7 +10,19 @@ Results
 License
 Issues
 Citation
-Overview
+
+# Overview
+
+In 1967, Nobel laureate W. Kohn and colleagues introduced the concept of the excitonic insulator (EI), a correlated many-body state arising from the condensation of electron-hole pairs, analogous to Cooper pair
+condensation in a superconductor. To explore the properties of the EI phase theoretically, we have, based on our best knowledge, firstly developed the ab initio formalism which is able to calcualte the electron-hole order parameter as well as the single-particle properties of the EI phase in the Bardeen–Cooper–Schrieffer (BCS) regime. Our formalism based on:
+(1) the GW method to account for the band energy;
+(2) GW plus Bethe-Salpeter equation (GW-BSE) approach for the electron-hole interactions;
+(3) Self-consistent field (SCF) method for solving the so-called gap equations.
+
+In this project, we provide the code for the step 3, whereas the `BerkeleyGW` code for the step 1 & 2 is publicly available at https://berkeleygw.org/.
+
+theoryon the mean-field self-consistent method
+
 Supervised learning techniques designed for the situation when the dimensionality exceeds the sample size have a tendency to overfit as the dimensionality of the data increases. To remedy this high dimensionality; low sample size (HDLSS) situation, we attempt to learn a lower-dimensional representation of the data before learning a classifier. That is, we project the data to a situation where the dimensionality is more manageable, and then we are able to better apply standard classification or clustering techniques since we will have fewer dimensions to overfit. A number of previous works have focused on how to strategically reduce dimensionality in the unsupervised case, yet in the supervised HDLSS regime, few works have attempted to devise dimensionality reduction techniques that leverage the labels associated with the data. In this package, we provide several methods for feature extraction, some utilizing labels and some not, along with easily extensible utilities to simplify cross-validative efforts to identify the best feature extraction method. Additionally, we include a series of adaptable benchmark simulations to serve as a standard for future investigative efforts into supervised HDLSS. Finally, we produce a comprehensive comparison of the included algorithms across a range of benchmark simulations and real data applications.
 
 Repo Contents
