@@ -1,0 +1,310 @@
+GWEI/Delta, Version 1.2 run on 29-Aug-2024 at 18:43:32
+
+                                                                 ..o.          
+                                                                .oxxo.         
+                                                               .oxxxxo...      
+                                                               oxxxxxxo.       
+                                                              .oxxxxxxx.       
+                                                              .ooooooxxo..     
+                                                              .oooooooxo..     
+                                                              .oooooxxo...     
+                                                       .........oxooo......    
+                                                 ............................  
+                                             ................................. 
+                                          .................................... 
+           .          ..oo. ....  .................................oooxxxxxxxo.
+     .............oxxxx@ox@@@x@x.....................o...........ooooooooooxx. 
+    .o.........oox@x.oo........xxx@@............ooxxxxo..........ooooxxxxxoxo  
+    .x........x@xxo...............o@xxo........oxxx@@@xoooooooooooooooxxxo...  
+    .o......ox@@o..................oox@o.....ooxxx@xoooxxxxxxxoooooooooooo.... 
+    o..ooooo@@xoooo....ooo...........x@o.....ooxxxxo   .oxxxxxxxxxxooooooo.... 
+    . .oooo@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@....ooooox.     .oxx@@@@@xxoo........ 
+      .ooooxxxxxxxooooooxooooooooooooooxo...oooooxx.        ..ox@xxxoo.........
+      .ooooooxxxx@xoooooooooooooxxoooooooooooxxxxx.            .oxxooooooooxxo.
+     .oooooxxxxx@@@xxxxxxxxxxxxxxxxxxxxxxxxoxxxxo.                .oxxxxxxxxo. 
+   ....oooxxxxx@@@xo..oxxx@@@@@@xxxxoxxoooooooxx.                  .oxxxoo..   
+  .....ooxxxx@@xo.       ........    .ooooooooxxo                              
+  ..oooxxxx@@@o                       .oooooooxoo.                             
+  ....oxooxxxxx.                       .ooo..oooo.                             
+  .....o.ooxxxxxo.                     .oooooooxo.                             
+ ......ooooxxxxxxo.                     .ooooooxoo..                           
+........ooxxxxxxxo..                     .o....oxoo...                         
+.......ooooxxxxxxxo.                     ........oooo.                         
+.ooooooo..ooxxxxoooo.                    .........ooo...                       
+..oxo...ooooxxxoooo..                    .ooo......oooo...                     
+  .ooooo....o.                            .oxxxoo....ooo....                   
+    .oooooo...                              ...ooooo...ooo..                   
+       ...                                     .oo.......                      
+                                               ....ooo...                      
+                      __              __                                       
+ ______              [  |            [  |                 ._____  _          _ 
+|_   _ \              | |  _          | |                /  ___ \| |        | |
+  | |_) | .---.  _. _.| | / |  .---.  | | .---.  _    _ / /    \_|\ \  /\  / / 
+  |  __'./ /__\\[ /`\_| '' <  / /__\\ | |/ /__\\| \  | | |   _____ \ \/  \/ /  
+ _| |__| | \__. | |   | |`\ \ | \___. | || \___. \ \/ / \ \.___| |  \  /\  /   
+|_______/ \.__./[_]  [__|  \_] \.__./[___]\.__./  \  /   \.____./    \/  \/    
+                                                  / /                          
+                                                 /_/                           
+ --------------------------------------------------------------------------------
+ Please cite the main BerkeleyGW paper when using results from this calculation:
+
+ Jack Deslippe, Georgy Samsonidze, David A. Strubbe, Manish Jain, Marvin L.
+ Cohen, and Steven G. Louie, 'BerkeleyGW: A Massively Parallel Computer Package
+ for the Calculation of the Quasiparticle and Optical Properties of Materials
+ and Nanostructures,' Comput. Phys. Commun. 183, 1269 (2012)
+
+ Aditionally, PLEASE CITE ALL PAPERS REPORTED AT THE END OF THIS CALCULATION.
+ --------------------------------------------------------------------------------
+
+ -------------------------------- PLEASE NOTE -----------------------------------
+ This is GWEI code written by Fang Zhang, which aims to calculate the properties
+ of excitonic insulators. The code is still under developing, please report any 
+ bugs to fangzhang@berkeley.edu. Thank you ! 
+ --------------------------------------------------------------------------------
+
+ Running MPI version (parallel) with 512 MPI task(s)
+
+ Parameters for GWEI calculations:
+ - Number of electrons in the system:    52
+ - Number of k-points in the full BZ:  7857
+ - Number of valence bands:  2
+ - Number of cond. bands:  2
+ - Number of spins:  1
+ - Number of spinors:  2
+ - Construction of initial gapmat:    1-th BSE eigenvector
+ - Number of minimum GWEI self-consistent steps:      10000
+ - Number of maximum GWEI self-consistent steps:     100000
+ - Save intermediate results of how many steps:         500
+ - Convergence is achieved of how many steps:          1000
+ - Temperature in Kelvin:       0.00
+ - Convergence threshold for GWEI self-consistent loop:   1.00E-16
+
+ Parallization info:
+ - Using H5FD_MPIO_INDEPENDENT for data Reading and Writing
+ - You are doing a class 1 calculation - npes <= nk
+ - We will distribute kernel over (k)
+ - each process stores   64 pairs of (ik, ic, iv)
+
+ Started reading kernel matrix (kernel.h5) at 18:43:34.
+ [ 18:43:46 |  10 % ], remaining: 0 s.
+ [ 18:44:03 |  20 % ], remaining: 83 s.
+ [ 18:44:14 |  30 % ], remaining: 0 s.
+ [ 18:44:36 |  40 % ], remaining: 0 s.
+ [ 18:44:47 |  50 % ], remaining: 0 s.
+ [ 18:45:10 |  60 % ], remaining: 0 s.
+ [ 18:45:31 |  70 % ], remaining: 30 s.
+ [ 18:45:41 |  80 % ], remaining: 0 s.
+ [ 18:46:05 |  90 % ], remaining: 0 s.
+ [ 18:46:15 | 100 % ], remaining: 0 s.
+ Finished reading kernel matrix (kernel.h5) at 18:47:37.
+
+ Started reading eigenvector (eigenvectors.h5) at 18:47:37.
+ Finished reading eigenvector (eigenvectors.h5) at 18:47:37.
+
+ Started reading eigenenergies (eqp.dat) at 18:47:37.
+ Finished reading eigenenergies (eqp.dat) at 18:47:40.
+
+ [ 18:47:40 ] loops begins: 
+ --------------------------------------------------------------------------------
+ [ 18:47:40 ] istep =       1 :  Estimated gapmat accuracy <   9.13899E-04 Ry
+ [ 18:51:04 ] istep =     500 :  Estimated gapmat accuracy <   3.53800E-09 Ry
+ [ 18:54:27 ] istep =    1000 :  Estimated gapmat accuracy <   2.87578E-09 Ry
+ [ 18:57:50 ] istep =    1500 :  Estimated gapmat accuracy <   2.57769E-09 Ry
+ [ 19:01:14 ] istep =    2000 :  Estimated gapmat accuracy <   2.31058E-09 Ry
+ [ 19:04:38 ] istep =    2500 :  Estimated gapmat accuracy <   2.07116E-09 Ry
+ [ 19:08:01 ] istep =    3000 :  Estimated gapmat accuracy <   1.85654E-09 Ry
+ [ 19:11:24 ] istep =    3500 :  Estimated gapmat accuracy <   1.66417E-09 Ry
+ [ 19:14:48 ] istep =    4000 :  Estimated gapmat accuracy <   1.49173E-09 Ry
+ [ 19:18:12 ] istep =    4500 :  Estimated gapmat accuracy <   1.33717E-09 Ry
+ [ 19:21:35 ] istep =    5000 :  Estimated gapmat accuracy <   1.19861E-09 Ry
+ [ 19:24:59 ] istep =    5500 :  Estimated gapmat accuracy <   1.07442E-09 Ry
+ [ 19:28:22 ] istep =    6000 :  Estimated gapmat accuracy <   9.63095E-10 Ry
+ [ 19:31:46 ] istep =    6500 :  Estimated gapmat accuracy <   8.63306E-10 Ry
+ [ 19:35:09 ] istep =    7000 :  Estimated gapmat accuracy <   7.73857E-10 Ry
+ [ 19:38:33 ] istep =    7500 :  Estimated gapmat accuracy <   6.93676E-10 Ry
+ [ 19:41:57 ] istep =    8000 :  Estimated gapmat accuracy <   6.21803E-10 Ry
+ [ 19:45:20 ] istep =    8500 :  Estimated gapmat accuracy <   5.57377E-10 Ry
+ [ 19:48:44 ] istep =    9000 :  Estimated gapmat accuracy <   4.99627E-10 Ry
+ [ 19:52:15 ] istep =    9500 :  Estimated gapmat accuracy <   4.47861E-10 Ry
+ [ 19:55:40 ] istep =   10000 :  Estimated gapmat accuracy <   4.01458E-10 Ry
+ [ 19:59:03 ] istep =   10500 :  Estimated gapmat accuracy <   3.59863E-10 Ry
+ [ 20:02:27 ] istep =   11000 :  Estimated gapmat accuracy <   3.22578E-10 Ry
+ [ 20:05:50 ] istep =   11500 :  Estimated gapmat accuracy <   2.89156E-10 Ry
+ [ 20:09:14 ] istep =   12000 :  Estimated gapmat accuracy <   2.59197E-10 Ry
+ [ 20:12:37 ] istep =   12500 :  Estimated gapmat accuracy <   2.32342E-10 Ry
+ [ 20:16:00 ] istep =   13000 :  Estimated gapmat accuracy <   2.08269E-10 Ry
+ [ 20:19:24 ] istep =   13500 :  Estimated gapmat accuracy <   1.86691E-10 Ry
+ [ 20:22:48 ] istep =   14000 :  Estimated gapmat accuracy <   1.67348E-10 Ry
+ [ 20:26:11 ] istep =   14500 :  Estimated gapmat accuracy <   1.50009E-10 Ry
+ [ 20:29:35 ] istep =   15000 :  Estimated gapmat accuracy <   1.34467E-10 Ry
+ [ 20:32:59 ] istep =   15500 :  Estimated gapmat accuracy <   1.20535E-10 Ry
+ [ 20:36:23 ] istep =   16000 :  Estimated gapmat accuracy <   1.08047E-10 Ry
+ [ 20:39:46 ] istep =   16500 :  Estimated gapmat accuracy <   9.68524E-11 Ry
+ [ 20:43:09 ] istep =   17000 :  Estimated gapmat accuracy <   8.68177E-11 Ry
+ [ 20:46:33 ] istep =   17500 :  Estimated gapmat accuracy <   7.78227E-11 Ry
+ [ 20:49:57 ] istep =   18000 :  Estimated gapmat accuracy <   6.97597E-11 Ry
+ [ 20:53:20 ] istep =   18500 :  Estimated gapmat accuracy <   6.25321E-11 Ry
+ [ 20:56:45 ] istep =   19000 :  Estimated gapmat accuracy <   5.60533E-11 Ry
+ [ 21:00:11 ] istep =   19500 :  Estimated gapmat accuracy <   5.02458E-11 Ry
+ [ 21:03:34 ] istep =   20000 :  Estimated gapmat accuracy <   4.50399E-11 Ry
+ [ 21:06:58 ] istep =   20500 :  Estimated gapmat accuracy <   4.03735E-11 Ry
+ [ 21:10:22 ] istep =   21000 :  Estimated gapmat accuracy <   3.61905E-11 Ry
+ [ 21:13:45 ] istep =   21500 :  Estimated gapmat accuracy <   3.24409E-11 Ry
+ [ 21:17:09 ] istep =   22000 :  Estimated gapmat accuracy <   2.90798E-11 Ry
+ [ 21:20:32 ] istep =   22500 :  Estimated gapmat accuracy <   2.60669E-11 Ry
+ [ 21:23:56 ] istep =   23000 :  Estimated gapmat accuracy <   2.33662E-11 Ry
+ [ 21:27:20 ] istep =   23500 :  Estimated gapmat accuracy <   2.09453E-11 Ry
+ [ 21:30:43 ] istep =   24000 :  Estimated gapmat accuracy <   1.87752E-11 Ry
+ [ 21:34:06 ] istep =   24500 :  Estimated gapmat accuracy <   1.68300E-11 Ry
+ [ 21:37:30 ] istep =   25000 :  Estimated gapmat accuracy <   1.50863E-11 Ry
+ [ 21:40:54 ] istep =   25500 :  Estimated gapmat accuracy <   1.35232E-11 Ry
+ [ 21:44:17 ] istep =   26000 :  Estimated gapmat accuracy <   1.21221E-11 Ry
+ [ 21:47:40 ] istep =   26500 :  Estimated gapmat accuracy <   1.08661E-11 Ry
+ [ 21:51:04 ] istep =   27000 :  Estimated gapmat accuracy <   9.74035E-12 Ry
+ [ 21:54:28 ] istep =   27500 :  Estimated gapmat accuracy <   8.73120E-12 Ry
+ [ 21:57:51 ] istep =   28000 :  Estimated gapmat accuracy <   7.82655E-12 Ry
+ [ 22:01:14 ] istep =   28500 :  Estimated gapmat accuracy <   7.01571E-12 Ry
+ [ 22:04:39 ] istep =   29000 :  Estimated gapmat accuracy <   6.28885E-12 Ry
+ [ 22:08:02 ] istep =   29500 :  Estimated gapmat accuracy <   5.63725E-12 Ry
+ [ 22:11:25 ] istep =   30000 :  Estimated gapmat accuracy <   5.05322E-12 Ry
+ [ 22:14:49 ] istep =   30500 :  Estimated gapmat accuracy <   4.52967E-12 Ry
+ [ 22:18:13 ] istep =   31000 :  Estimated gapmat accuracy <   4.06039E-12 Ry
+ [ 22:21:36 ] istep =   31500 :  Estimated gapmat accuracy <   3.63968E-12 Ry
+ [ 22:24:59 ] istep =   32000 :  Estimated gapmat accuracy <   3.26259E-12 Ry
+ [ 22:28:24 ] istep =   32500 :  Estimated gapmat accuracy <   2.92460E-12 Ry
+ [ 22:31:47 ] istep =   33000 :  Estimated gapmat accuracy <   2.62153E-12 Ry
+ [ 22:35:10 ] istep =   33500 :  Estimated gapmat accuracy <   2.34995E-12 Ry
+ [ 22:38:34 ] istep =   34000 :  Estimated gapmat accuracy <   2.10651E-12 Ry
+ [ 22:41:57 ] istep =   34500 :  Estimated gapmat accuracy <   1.88828E-12 Ry
+ [ 22:45:21 ] istep =   35000 :  Estimated gapmat accuracy <   1.69264E-12 Ry
+ [ 22:48:45 ] istep =   35500 :  Estimated gapmat accuracy <   1.51728E-12 Ry
+ [ 22:52:08 ] istep =   36000 :  Estimated gapmat accuracy <   1.36005E-12 Ry
+ [ 22:55:32 ] istep =   36500 :  Estimated gapmat accuracy <   1.21913E-12 Ry
+ [ 22:58:56 ] istep =   37000 :  Estimated gapmat accuracy <   1.09284E-12 Ry
+ [ 23:02:19 ] istep =   37500 :  Estimated gapmat accuracy <   9.79620E-13 Ry
+ [ 23:05:42 ] istep =   38000 :  Estimated gapmat accuracy <   8.78136E-13 Ry
+ [ 23:09:06 ] istep =   38500 :  Estimated gapmat accuracy <   7.87148E-13 Ry
+ [ 23:12:30 ] istep =   39000 :  Estimated gapmat accuracy <   7.05579E-13 Ry
+ [ 23:15:53 ] istep =   39500 :  Estimated gapmat accuracy <   6.32465E-13 Ry
+ [ 23:19:17 ] istep =   40000 :  Estimated gapmat accuracy <   5.66978E-13 Ry
+ [ 23:22:41 ] istep =   40500 :  Estimated gapmat accuracy <   5.08205E-13 Ry
+ [ 23:26:04 ] istep =   41000 :  Estimated gapmat accuracy <   4.55583E-13 Ry
+ [ 23:29:28 ] istep =   41500 :  Estimated gapmat accuracy <   4.08369E-13 Ry
+ [ 23:32:51 ] istep =   42000 :  Estimated gapmat accuracy <   3.66065E-13 Ry
+ [ 23:36:15 ] istep =   42500 :  Estimated gapmat accuracy <   3.28154E-13 Ry
+ [ 23:39:39 ] istep =   43000 :  Estimated gapmat accuracy <   2.94154E-13 Ry
+ [ 23:43:02 ] istep =   43500 :  Estimated gapmat accuracy <   2.63663E-13 Ry
+ [ 23:46:25 ] istep =   44000 :  Estimated gapmat accuracy <   2.36326E-13 Ry
+ [ 23:49:49 ] istep =   44500 :  Estimated gapmat accuracy <   2.11870E-13 Ry
+ [ 23:53:13 ] istep =   45000 :  Estimated gapmat accuracy <   1.89962E-13 Ry
+ [ 23:56:36 ] istep =   45500 :  Estimated gapmat accuracy <   1.70252E-13 Ry
+ [ 00:00:00 ] istep =   46000 :  Estimated gapmat accuracy <   1.52631E-13 Ry
+ [ 00:03:23 ] istep =   46500 :  Estimated gapmat accuracy <   1.36786E-13 Ry
+ [ 00:06:47 ] istep =   47000 :  Estimated gapmat accuracy <   1.22602E-13 Ry
+ [ 00:10:11 ] istep =   47500 :  Estimated gapmat accuracy <   1.09945E-13 Ry
+ [ 00:13:34 ] istep =   48000 :  Estimated gapmat accuracy <   9.85687E-14 Ry
+ [ 00:16:58 ] istep =   48500 :  Estimated gapmat accuracy <   8.83243E-14 Ry
+ [ 00:20:21 ] istep =   49000 :  Estimated gapmat accuracy <   7.91728E-14 Ry
+ [ 00:23:45 ] istep =   49500 :  Estimated gapmat accuracy <   7.09667E-14 Ry
+ [ 00:27:09 ] istep =   50000 :  Estimated gapmat accuracy <   6.36453E-14 Ry
+ [ 00:30:33 ] istep =   50500 :  Estimated gapmat accuracy <   5.70655E-14 Ry
+ [ 00:33:56 ] istep =   51000 :  Estimated gapmat accuracy <   5.11292E-14 Ry
+ [ 00:37:20 ] istep =   51500 :  Estimated gapmat accuracy <   4.58383E-14 Ry
+ [ 00:40:43 ] istep =   52000 :  Estimated gapmat accuracy <   4.11008E-14 Ry
+ [ 00:44:07 ] istep =   52500 :  Estimated gapmat accuracy <   3.68585E-14 Ry
+ [ 00:47:31 ] istep =   53000 :  Estimated gapmat accuracy <   3.30751E-14 Ry
+ [ 00:50:54 ] istep =   53500 :  Estimated gapmat accuracy <   2.96456E-14 Ry
+ [ 00:54:18 ] istep =   54000 :  Estimated gapmat accuracy <   2.65361E-14 Ry
+ [ 00:57:42 ] istep =   54500 :  Estimated gapmat accuracy <   2.37926E-14 Ry
+ [ 01:01:05 ] istep =   55000 :  Estimated gapmat accuracy <   2.13354E-14 Ry
+ [ 01:04:29 ] istep =   55500 :  Estimated gapmat accuracy <   1.91175E-14 Ry
+ [ 01:07:53 ] istep =   56000 :  Estimated gapmat accuracy <   1.71859E-14 Ry
+ [ 01:11:16 ] istep =   56500 :  Estimated gapmat accuracy <   1.53627E-14 Ry
+ [ 01:14:40 ] istep =   57000 :  Estimated gapmat accuracy <   1.38110E-14 Ry
+ [ 01:18:03 ] istep =   57500 :  Estimated gapmat accuracy <   1.23773E-14 Ry
+ [ 01:21:27 ] istep =   58000 :  Estimated gapmat accuracy <   1.10979E-14 Ry
+ [ 01:24:51 ] istep =   58500 :  Estimated gapmat accuracy <   9.96165E-15 Ry
+ [ 01:28:14 ] istep =   59000 :  Estimated gapmat accuracy <   8.90954E-15 Ry
+ [ 01:31:38 ] istep =   59500 :  Estimated gapmat accuracy <   8.00141E-15 Ry
+ [ 01:35:01 ] istep =   60000 :  Estimated gapmat accuracy <   7.17829E-15 Ry
+ [ 01:38:24 ] istep =   60500 :  Estimated gapmat accuracy <   6.42628E-15 Ry
+ [ 01:41:48 ] istep =   61000 :  Estimated gapmat accuracy <   5.79224E-15 Ry
+ [ 01:45:11 ] istep =   61500 :  Estimated gapmat accuracy <   5.21458E-15 Ry
+ [ 01:48:34 ] istep =   62000 :  Estimated gapmat accuracy <   4.68115E-15 Ry
+ [ 01:51:58 ] istep =   62500 :  Estimated gapmat accuracy <   4.15813E-15 Ry
+ [ 01:55:21 ] istep =   63000 :  Estimated gapmat accuracy <   3.77042E-15 Ry
+ [ 01:58:46 ] istep =   63500 :  Estimated gapmat accuracy <   3.36797E-15 Ry
+ [ 02:02:09 ] istep =   64000 :  Estimated gapmat accuracy <   3.03577E-15 Ry
+ [ 02:05:32 ] istep =   64500 :  Estimated gapmat accuracy <   2.70183E-15 Ry
+ [ 02:08:56 ] istep =   65000 :  Estimated gapmat accuracy <   2.42428E-15 Ry
+ [ 02:12:20 ] istep =   65500 :  Estimated gapmat accuracy <   2.22305E-15 Ry
+ [ 02:15:43 ] istep =   66000 :  Estimated gapmat accuracy <   1.96891E-15 Ry
+ [ 02:19:07 ] istep =   66500 :  Estimated gapmat accuracy <   1.81365E-15 Ry
+ [ 02:22:30 ] istep =   67000 :  Estimated gapmat accuracy <   1.62110E-15 Ry
+ [ 02:25:54 ] istep =   67500 :  Estimated gapmat accuracy <   1.46150E-15 Ry
+ [ 02:29:17 ] istep =   68000 :  Estimated gapmat accuracy <   1.30625E-15 Ry
+ [ 02:32:40 ] istep =   68500 :  Estimated gapmat accuracy <   1.17441E-15 Ry
+ [ 02:36:04 ] istep =   69000 :  Estimated gapmat accuracy <   1.07813E-15 Ry
+ [ 02:39:27 ] istep =   69500 :  Estimated gapmat accuracy <   1.02782E-15 Ry
+ [ 02:42:51 ] istep =   70000 :  Estimated gapmat accuracy <   9.19403E-16 Ry
+ [ 02:46:14 ] istep =   70500 :  Estimated gapmat accuracy <   8.85576E-16 Ry
+ [ 02:49:38 ] istep =   71000 :  Estimated gapmat accuracy <   8.04912E-16 Ry
+ [ 02:53:01 ] istep =   71500 :  Estimated gapmat accuracy <   7.61544E-16 Ry
+ [ 02:56:25 ] istep =   72000 :  Estimated gapmat accuracy <   6.86950E-16 Ry
+ [ 02:59:49 ] istep =   72500 :  Estimated gapmat accuracy <   6.47052E-16 Ry
+ [ 03:03:12 ] istep =   73000 :  Estimated gapmat accuracy <   7.12971E-16 Ry
+ [ 03:06:35 ] istep =   73500 :  Estimated gapmat accuracy <   6.12357E-16 Ry
+ [ 03:09:59 ] istep =   74000 :  Estimated gapmat accuracy <   7.07767E-16 Ry
+ [ 03:13:22 ] istep =   74500 :  Estimated gapmat accuracy <   6.43582E-16 Ry
+ [ 03:16:46 ] istep =   75000 :  Estimated gapmat accuracy <   5.34295E-16 Ry
+ [ 03:20:10 ] istep =   75500 :  Estimated gapmat accuracy <   5.55112E-16 Ry
+ [ 03:23:33 ] istep =   76000 :  Estimated gapmat accuracy <   5.30825E-16 Ry
+ [ 03:26:57 ] istep =   76500 :  Estimated gapmat accuracy <   5.34295E-16 Ry
+ [ 03:30:20 ] istep =   77000 :  Estimated gapmat accuracy <   5.16948E-16 Ry
+ [ 03:33:44 ] istep =   77500 :  Estimated gapmat accuracy <   5.34295E-16 Ry
+ [ 03:37:07 ] istep =   78000 :  Estimated gapmat accuracy <   5.23886E-16 Ry
+ [ 03:40:31 ] istep =   78500 :  Estimated gapmat accuracy <   5.56846E-16 Ry
+ [ 03:43:54 ] istep =   79000 :  Estimated gapmat accuracy <   5.89806E-16 Ry
+ [ 03:47:18 ] istep =   79500 :  Estimated gapmat accuracy <   5.48173E-16 Ry
+ [ 03:50:42 ] istep =   80000 :  Estimated gapmat accuracy <   5.15213E-16 Ry
+ [ 03:54:07 ] istep =   80500 :  Estimated gapmat accuracy <   4.92661E-16 Ry
+ [ 03:57:31 ] istep =   81000 :  Estimated gapmat accuracy <   5.13478E-16 Ry
+ [ 04:00:54 ] istep =   81500 :  Estimated gapmat accuracy <   5.46438E-16 Ry
+ [ 04:04:18 ] istep =   82000 :  Estimated gapmat accuracy <   5.01335E-16 Ry
+ [ 04:07:42 ] istep =   82500 :  Estimated gapmat accuracy <   5.11743E-16 Ry
+ [ 04:11:05 ] istep =   83000 :  Estimated gapmat accuracy <   4.71845E-16 Ry
+ [ 04:14:29 ] istep =   83500 :  Estimated gapmat accuracy <   4.56232E-16 Ry
+ [ 04:17:53 ] istep =   84000 :  Estimated gapmat accuracy <   5.15213E-16 Ry
+ [ 04:21:16 ] istep =   84500 :  Estimated gapmat accuracy <   4.83988E-16 Ry
+ [ 04:24:39 ] istep =   85000 :  Estimated gapmat accuracy <   5.60316E-16 Ry
+ [ 04:28:03 ] istep =   85500 :  Estimated gapmat accuracy <   5.23886E-16 Ry
+ [ 04:31:27 ] istep =   86000 :  Estimated gapmat accuracy <   5.04805E-16 Ry
+ [ 04:34:50 ] istep =   86500 :  Estimated gapmat accuracy <   5.77663E-16 Ry
+ [ 04:38:14 ] istep =   87000 :  Estimated gapmat accuracy <   5.06539E-16 Ry
+ [ 04:41:37 ] istep =   87500 :  Estimated gapmat accuracy <   5.06539E-16 Ry
+ [ 04:45:01 ] istep =   88000 :  Estimated gapmat accuracy <   4.73580E-16 Ry
+ [ 04:48:24 ] istep =   88500 :  Estimated gapmat accuracy <   4.90927E-16 Ry
+ [ 04:51:48 ] istep =   89000 :  Estimated gapmat accuracy <   5.10009E-16 Ry
+ [ 04:55:11 ] istep =   89500 :  Estimated gapmat accuracy <   5.22152E-16 Ry
+ [ 04:58:34 ] istep =   90000 :  Estimated gapmat accuracy <   5.22152E-16 Ry
+ [ 05:01:59 ] istep =   90500 :  Estimated gapmat accuracy <   5.37764E-16 Ry
+ [ 05:05:22 ] istep =   91000 :  Estimated gapmat accuracy <   5.25621E-16 Ry
+ [ 05:08:45 ] istep =   91500 :  Estimated gapmat accuracy <   6.05418E-16 Ry
+ [ 05:12:09 ] istep =   92000 :  Estimated gapmat accuracy <   4.99600E-16 Ry
+ [ 05:15:32 ] istep =   92500 :  Estimated gapmat accuracy <   5.58581E-16 Ry
+ [ 05:18:56 ] istep =   93000 :  Estimated gapmat accuracy <   4.64906E-16 Ry
+ [ 05:22:19 ] istep =   93500 :  Estimated gapmat accuracy <   4.70110E-16 Ry
+ [ 05:25:43 ] istep =   94000 :  Estimated gapmat accuracy <   5.27356E-16 Ry
+ [ 05:29:06 ] istep =   94500 :  Estimated gapmat accuracy <   4.96131E-16 Ry
+ [ 05:32:30 ] istep =   95000 :  Estimated gapmat accuracy <   4.97866E-16 Ry
+ [ 05:35:53 ] istep =   95500 :  Estimated gapmat accuracy <   5.98480E-16 Ry
+ [ 05:39:17 ] istep =   96000 :  Estimated gapmat accuracy <   5.79398E-16 Ry
+ [ 05:42:40 ] istep =   96500 :  Estimated gapmat accuracy <   4.70110E-16 Ry
+ [ 05:46:03 ] istep =   97000 :  Estimated gapmat accuracy <   5.72459E-16 Ry
+ [ 05:49:26 ] istep =   97500 :  Estimated gapmat accuracy <   5.79398E-16 Ry
+ [ 05:52:50 ] istep =   98000 :  Estimated gapmat accuracy <   5.29091E-16 Ry
+ [ 05:56:14 ] istep =   98500 :  Estimated gapmat accuracy <   4.89192E-16 Ry
+ [ 05:59:37 ] istep =   99000 :  Estimated gapmat accuracy <   5.13478E-16 Ry
+ [ 06:03:00 ] istep =   99500 :  Estimated gapmat accuracy <   6.08888E-16 Ry
+ [ 06:06:24 ] istep =  100000 :  Estimated gapmat accuracy <   5.84602E-16 Ry
+ All finish, exit !

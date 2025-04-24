@@ -12,9 +12,7 @@
 - [Documentation](#documentation)
 - [File Description](#file-description)
 - [Demo](#demo)
-- [Results](#results)
 - [License](./LICENSE)
-- [Issues](https://github.com/ebridge2/lol/issues)
 - [Citation](#citation)
 
 # Overview
@@ -78,11 +76,11 @@ The format of all input files—including the `delta.inp` file used to run `delt
 # File Description
 
 ## Input files
-To run `delta.x`, you need the following outputs from prior GW–BSE calculations using the BerkeleyGW package:
+To run `delta.x`, you need the following outputs from prior *GW*–BSE calculations using the `BerkeleyGW` package:
 
-1. **`eqp.dat`**: contains the quasiparticle energies (band energies) produced by BerkeleyGW’s `sigma.x` code.  
-2. **`kernel.h5`**: contains the electron–hole interaction kernel produced by BerkeleyGW’s `kernel.x` code.  
-3. **`eigenvectors.h5`**: contains the exciton envelope functions produced by BerkeleyGW’s `absorption.x` code.
+1. **`eqp.dat`**: contains the quasiparticle energies (band energies) produced by `BerkeleyGW`’s `sigma.x` code.  
+2. **`kernel.h5`**: contains the electron–hole interaction kernel produced by `BerkeleyGW`’s `kernel.x` code.  
+3. **`eigenvectors.h5`**: contains the exciton envelope functions produced by `BerkeleyGW`’s `absorption.x` code.
 
 Please note Filenames **must** be exactly `eqp.dat`, `kernel.h5`, and `eigenvectors.h5`, and the `eqp.dat` file **must** include all k-points present in `kernel.h5` (i.e., do not fold k-points using symmetry).  
 
@@ -96,3 +94,21 @@ After executing `delta.x` (for example, with `srun delta.x -i delta.inp > delta.
 6. **delmat.h5**: consolidates all of the above data into a single `HDF5` file. 
 
 # Demo
+For a demonstration of using the `delta.x` code, we provide a convergence run for monolayer 1T'-MoS<sub>2</sub> in the `/Demo/Delta_MoS2_T0` directory. Note the SCF parameters and convergence thresholds are set exceptionally high.
+
+Unfortunately, the size of the input files (`kernel.h5`, `eigenvectors.h5` and `eqp.dat`) are too large to include in the repository, please download them from Zenodo: [https://doi.org/10.5281/zenodo.15277150](https://doi.org/10.5281/zenodo.15277150)  
+1. Download the [`Inputs_SCFEI_MoS2.tar`](https://doi.org/10.5281/zenodo.15277150) archive.  
+2. Unzip it to extract `kernel.h5`, `eigenvectors.h5`, and `eqp.dat`.  
+3. Move `eqp.dat`, `kernel.h5`, and `eigenvectors.h5` into `/Demo/Delta_MoS2_T0`.
+
+Please note the unzip file `kernel.h5` is very large (size ~ 236 GB), make sure you have enough space before unzip it.
+
+In the `/Demo/Delta_MoS2_T0` directory, we have provided the `delta.inp` file as well as all the output files that you should get.
+
+# LICENSE
+This package is under GNU GENERAL PUBLIC LICENSE Version 3
+
+# Citation
+Please cite the following paper(s) if you plan to use this package:
+
+>Fang Zhang, Jiawei Ruan, Gurjyot Sethi, Chen Hu, Steven G Louie, Ab initio study of exciton insulator phase: Emergent *p*-wave spin textures from spontaneous excitonic condensation, arXiv:2503.11563.

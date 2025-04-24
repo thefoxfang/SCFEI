@@ -1,0 +1,22 @@
+number_val_bands  2
+number_cond_bands 2
+
+initial_gapmat 1
+read_eigenvectors
+
+temperature 0.00
+
+convergence_threshold 1.0D-16
+
+min_number_iterations 10000
+
+max_number_iterations 100000
+
+save_number_iterations 500
+
+converge_number_iterations 1000
+
+#restart
+
+#HDF5_Collective
+HDF5_Independent
