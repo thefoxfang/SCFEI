@@ -1,0 +1,40 @@
+# Set the number of valence bands
+number_val_bands  2
+
+# Set the number of conduction bands
+number_cond_bands 2
+
+# Set the temperature in Kelvin
+temperature 0.00
+
+# How to build the initial order parameter
+# 0: start with a random number
+# n: start with the n-th exciton envelope function
+initial_gapmat 1
+
+# If initial_gapmat >= 1, then we need to read in the eigenvectors.h5 file
+read_eigenvectors
+
+# The convergence threshold in Ry of the order parameter
+convergence_threshold 1.0D-12
+
+# The minimum number of self-consistent steps we must run
+# the scf step would not stop even through convergence is achieved before this
+min_number_iterations 500
+
+# The maximum number of self-consistent steps
+max_number_iterations 10000
+
+# In each how many steps we save the results
+save_number_iterations 500
+
+# In how many consecutive steps the convergence_threshold is achieved, the 
+# program would stop and considered converged. 
+converge_number_iterations 1000
+
+# Restart the calculation, a previously delmat.h5 file should be provided.
+#restart
+
+# the HDF5 behaviour, collective or independent
+#HDF5_Collective
+HDF5_Independent
