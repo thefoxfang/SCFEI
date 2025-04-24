@@ -61,15 +61,15 @@ Ensure that both `LAPACK95` and `HDF5` are installed with Fortran interfaces bef
 #  Installation Guide
 Here is the procedure to install the main code under `/Fortran` directory. The installation procedure for the utilities under the `/Tools` directory is the same.
 1. Change to the `/Fortran` directory:  
->>> cd Fortran
-2. Edit arch.mk to set:
->>>`FC`: your Fortran compiler command (e.g., `mpif90`)  
->>>`MY_HDF5_DIR`: path to the HDF5 installation  
->>>`MY_LAPACK_DIR`: path to the LAPACK95 installation
+```cd Fortran```
+2. Edit arch.mk to set:  
+`FC`: your Fortran compiler command (e.g., `mpif90`)  
+`MY_HDF5_DIR`: path to the HDF5 installation  
+`MY_LAPACK_DIR`: path to the LAPACK95 installation
 3. In the /Fortran directory, compile the code:  
->>>`make`
-4. After compilation, the executable `delta.x` will be placed in `/Fortran/bin/`. Run it with:
->>> `srun delta.x -i delta.inp > delta.out`
+`make`
+4. After compilation, the executable `delta.x` will be placed in `/Fortran/bin/`. Run it with:  
+`srun delta.x -i delta.inp > delta.out`
 
 # Documentation
 The format of all the input files, including the `delta.inp` for running the delta.x code, is available under `/Doc` didirectory
